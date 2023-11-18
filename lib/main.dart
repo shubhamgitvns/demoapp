@@ -5,4 +5,3 @@ import 'HomePage.dart';
 void main() {
   runApp(const StartPage());
 }
-

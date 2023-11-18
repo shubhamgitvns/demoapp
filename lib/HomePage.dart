@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'UserHomePage.dart';
+
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
 
@@ -11,7 +12,6 @@ class StartPage extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: const LoaderPage(title: 'Flutter Demo Home Page'),

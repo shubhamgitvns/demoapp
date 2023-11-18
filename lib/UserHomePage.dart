@@ -1,9 +1,7 @@
-
-
+import 'package:demoapp/apptheme.dart';
 import 'package:flutter/material.dart';
 
 import 'Utilities.dart';
-
 
 class LoaderPage extends StatefulWidget {
   const LoaderPage({super.key, required this.title});
@@ -16,7 +14,7 @@ class LoaderPage extends StatefulWidget {
 class _LoaderPageState extends State<LoaderPage> {
   //List<Data> data = [];
   dynamic text = "";
-String name="";
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +23,7 @@ String name="";
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.greenAccent,
+          color: AppTheme.bgcolor,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,12 +36,13 @@ String name="";
             ),
             ElevatedButton(
                 onPressed: () async {
-                 // text = "Count ${_counter}";
-                  text = await Utilities.downloadquestion("/superapp/data.json");
+                  // text = "Count ${_counter}";
+                  text =
+                      await Utilities.downloadquestion("/superapp/data.json");
                   if (text is bool)
-                    text="Error";
+                    text = "Error";
                   else
-                    text=text.toString();
+                    text = text.toString();
 
                   setState(() {});
                 },
@@ -55,8 +54,8 @@ String name="";
   }
 }
 
-class Data{
-  String name="";
+class Data {
+  String name = "";
 
   //*****Create the constructor******
   Data(this.name);

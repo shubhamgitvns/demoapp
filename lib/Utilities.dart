@@ -1,3 +1,4 @@
+import 'package:demoapp/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -17,6 +18,18 @@ class Utilities {
       // convert string data in json.
       final jsonResponse = convert.jsonDecode(response.body);
       //print(jsonResponse);
+      String bgcolor = jsonResponse["bgcolor"];
+      switch (bgcolor) {
+        case "green":
+          AppTheme.bgcolor = Colors.green;
+          break;
+        case "blue":
+          AppTheme.bgcolor = Colors.blue;
+          break;
+        default:
+          AppTheme.bgcolor = Colors.white;
+          break;
+      }
       return jsonResponse["bgcolor"];
     } catch (e) {
       print(e);
