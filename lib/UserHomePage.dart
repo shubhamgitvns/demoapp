@@ -32,6 +32,7 @@ class _LoaderPageState extends State<LoaderPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              //Image Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -63,39 +64,44 @@ class _LoaderPageState extends State<LoaderPage> {
                   ),
                 ],
               ),
+              //Intro Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Container(
+                    child:  Text(
+                      AppText.intro,
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.intro),
+                    ),
+                  )
+                ],
+              ),
+              //Menu Button Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                     height: 50,
                   ),
-                  Container(
-                    child: const Text(
-                      "This app using each one",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
                   ElevatedButton(
                       onPressed: () {
 
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blueAccent,
+                        primary: AppTheme.menubgbutton,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 32, vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: const Text("Menue"))
+                      child: const Text("Menu"))
                 ],
               )
             ],

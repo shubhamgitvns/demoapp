@@ -14,6 +14,8 @@ class Utilities {
         return Colors.green;
       case "teal":
         return Colors.teal;
+      case "white":
+        return Colors.white;
       default:
         return Colors.white;
     }
@@ -41,8 +43,17 @@ class Utilities {
       //calling getColorFromString function()
       AppTheme.appbarbgcolor = getColorFromString(appbarbgcolor);
 
+      String menubgbutton = jsonResponse["menubgbutton"];
+      //calling getColorFromString function()
+      AppTheme.menubgbutton = getColorFromString(menubgbutton);
+
       String appname = jsonResponse["appname"];
       AppText.appname = appname;
+
+      String intro = jsonResponse["intro"];
+      AppText.intro = intro;
+
+
       return "Kabootar";
     } catch (e) {
       print(e);
