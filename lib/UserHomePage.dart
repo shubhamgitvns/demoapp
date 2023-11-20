@@ -12,14 +12,15 @@ class LoaderPage extends StatefulWidget {
 }
 
 class _LoaderPageState extends State<LoaderPage> {
-  //List<Data> data = [];
+
   dynamic text = "";
-  String name = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: AppTheme.appbarbgcolor,
+        title:  Text(AppTheme.appname,style: TextStyle(color: AppTheme.textcolor), ),
+        centerTitle: true,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -36,15 +37,7 @@ class _LoaderPageState extends State<LoaderPage> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  // text = "Count ${_counter}";
-                  text =
-                      await Utilities.downloadquestion("/superapp/data.json");
-                  if (text is bool)
-                    text = "Error";
-                  else
-                    text = text.toString();
 
-                  setState(() {});
                 },
                 child: Text("click"))
           ],
@@ -54,14 +47,3 @@ class _LoaderPageState extends State<LoaderPage> {
   }
 }
 
-class Data {
-  String name = "";
-
-  //*****Create the constructor******
-  Data(this.name);
-
-  @override
-  String toString() {
-    return 'Data{name: $name}';
-  }
-}

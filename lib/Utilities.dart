@@ -4,8 +4,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 class Utilities {
+  static const String mainsitename = "directsell.biz";
   static Future downloadquestion(String link) async {
-    final url = Uri.http("directsell.biz", link, {});
+    final url = Uri.http(mainsitename, link, {});
     // return "From Function";
     try {
       //http.get that work is download the data from internet or fetch the data from internet
@@ -17,8 +18,9 @@ class Utilities {
       print("Body ${response.body}");
       // convert string data in json.
       final jsonResponse = convert.jsonDecode(response.body);
-      //print(jsonResponse);
+
       String bgcolor = jsonResponse["bgcolor"];
+      //This switch case use by background color
       switch (bgcolor) {
         case "green":
           AppTheme.bgcolor = Colors.green;
@@ -30,10 +32,27 @@ class Utilities {
           AppTheme.bgcolor = Colors.white;
           break;
       }
-      return jsonResponse["bgcolor"];
+
+      String appbarbgcolor= jsonResponse["appbarbgcolor"];
+      //This switch case use by Appbar background color
+
+      switch (appbarbgcolor) {
+        case "teal":
+          AppTheme.appbarbgcolor=Colors.teal;
+          break;
+        case "blue":
+          AppTheme.bgcolor = Colors.blue;
+          break;
+        default:
+          AppTheme.bgcolor = Colors.white;
+          break;
+      }
+      return "Kabootar";
     } catch (e) {
       print(e);
       return false;
     }
+
+
   }
 }
