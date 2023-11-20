@@ -5,6 +5,20 @@ import 'dart:convert' as convert;
 
 class Utilities {
   static const String mainsitename = "directsell.biz";
+
+  static Color getColorFromString(String theamcolor) {
+    switch (theamcolor) {
+      case "blue":
+        return Colors.blue;
+      case "green":
+        return Colors.green;
+      case "teal":
+        return Colors.teal;
+      default:
+        return Colors.white;
+    }
+  }
+
   static Future downloadquestion(String link) async {
     final url = Uri.http(mainsitename, link, {});
     // return "From Function";
@@ -20,39 +34,19 @@ class Utilities {
       final jsonResponse = convert.jsonDecode(response.body);
 
       String bgcolor = jsonResponse["bgcolor"];
-      //This switch case use by background color
-      switch (bgcolor) {
-        case "green":
-          AppTheme.bgcolor = Colors.green;
-          break;
-        case "blue":
-          AppTheme.bgcolor = Colors.blue;
-          break;
-        default:
-          AppTheme.bgcolor = Colors.white;
-          break;
-      }
+      //calling getColorFromString function()
+      AppTheme.bgcolor = getColorFromString(bgcolor);
 
-      String appbarbgcolor= jsonResponse["appbarbgcolor"];
-      //This switch case use by Appbar background color
+      String appbarbgcolor = jsonResponse["appbarbgcolor"];
+      //calling getColorFromString function()
+      AppTheme.appbarbgcolor = getColorFromString(appbarbgcolor);
 
-      switch (appbarbgcolor) {
-        case "teal":
-          AppTheme.appbarbgcolor=Colors.teal;
-          break;
-        case "blue":
-          AppTheme.bgcolor = Colors.blue;
-          break;
-        default:
-          AppTheme.bgcolor = Colors.white;
-          break;
-      }
+      String appname = jsonResponse["appname"];
+      AppText.appname = appname;
       return "Kabootar";
     } catch (e) {
       print(e);
       return false;
     }
-
-
   }
 }

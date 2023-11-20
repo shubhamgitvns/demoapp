@@ -12,38 +12,96 @@ class LoaderPage extends StatefulWidget {
 }
 
 class _LoaderPageState extends State<LoaderPage> {
-
   dynamic text = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppTheme.appbarbgcolor,
-        title:  Text(AppTheme.appname,style: TextStyle(color: AppTheme.textcolor), ),
+        title: Text(
+          AppText.appname,
+          style: TextStyle(color: AppTheme.textcolor),
+        ),
         centerTitle: true,
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          color: AppTheme.bgcolor,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(text),
-              ],
-            ),
-            ElevatedButton(
-                onPressed: () async {
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppTheme.bgcolor,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(75),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black,
+                            offset: Offset(2.0, 2.0),
+                            blurRadius: 10,
+                            spreadRadius: 1.0,
+                          ),
+                          BoxShadow(
+                            color: Colors.transparent,
+                            offset: Offset(-2.0, -2.0),
+                            blurRadius: 10,
+                            spreadRadius: 1.0,
+                          ),
+                        ]),
+                    child: Center(
+                        child: SizedBox(
+                            height: 100,
+                            child: Image.network(
+                                'https://cdn.pixabay.com/photo/2013/07/12/15/56/tic-tac-toe-150614_1280.png'))),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Container(
+                    child: const Text(
+                      "This app using each one",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
 
-                },
-                child: Text("click"))
-          ],
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blueAccent,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 32, vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: const Text("Menue"))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
