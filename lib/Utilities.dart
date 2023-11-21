@@ -53,6 +53,9 @@ class Utilities {
       String intro = jsonResponse["intro"];
       AppText.intro = intro;
 
+      String img = jsonResponse["img"];
+      Appimg.img = img;
+
 
       return "Kabootar";
     } catch (e) {

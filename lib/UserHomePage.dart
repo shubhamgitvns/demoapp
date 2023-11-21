@@ -57,10 +57,14 @@ class _LoaderPageState extends State<LoaderPage> {
                           ),
                         ]),
                     child: Center(
-                        child: SizedBox(
-                            height: 100,
+                        child: Container(
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(75),
+                            ),
+
                             child: Image.network(
-                                'https://cdn.pixabay.com/photo/2013/07/12/15/56/tic-tac-toe-150614_1280.png'))),
+                                Appimg.img))),
                   ),
                 ],
               ),

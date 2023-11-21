@@ -12,5 +12,8 @@ class AppTheme {
 
 class AppText{
   static String appname="App name";
-  static String intro="This app using each one";
+  static String intro="Intro";
+}
+class Appimg{
+  static String img="https://cdn.pixabay.com/photo/2013/07/12/15/56/tic-tac-toe-150614_1280.png";
 }
