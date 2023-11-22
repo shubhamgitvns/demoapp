@@ -27,6 +27,7 @@ class _LoaderPageState extends State<LoaderPage> {
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: 10,),
             Container(
               height: 200,
               decoration: BoxDecoration(
@@ -67,6 +68,9 @@ class _LoaderPageState extends State<LoaderPage> {
                           child: Image.network(
                               "https://cdn.pixabay.com/photo/2016/01/08/20/02/michelle-obama-1129160_1280.jpg"),
                         ),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       Row(
                         children: const [
@@ -133,7 +137,7 @@ class _LoaderPageState extends State<LoaderPage> {
                                 text: const TextSpan(
                                   text: 'Welcome To ',
                                   style: TextStyle(
-                                      fontSize: 25,
+                                      fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
                                   children: <TextSpan>[
@@ -162,7 +166,7 @@ class _LoaderPageState extends State<LoaderPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: const [
                                   SizedBox(
-                                    width: 300,
+                                    width: 250,
                                     child: Card(
                                       child: Text(
                                           "Alert the crime Satark reho Crime se oe use kerne se  ndewdew fedjfdj fdf jd ffefejf effdfddvdnv  j jb jcbsj ",
