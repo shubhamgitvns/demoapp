@@ -27,7 +27,9 @@ class _LoaderPageState extends State<LoaderPage> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: 200,
               decoration: BoxDecoration(
@@ -45,8 +47,8 @@ class _LoaderPageState extends State<LoaderPage> {
                         padding:
                             const EdgeInsets.only(top: 10, right: 10, left: 10),
                         child: Container(
-                          width: 70,
-                          height: 110,
+                          width: 100,
+                          height: 100,
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.teal),
                             borderRadius: BorderRadius.circular(10),
@@ -65,8 +67,12 @@ class _LoaderPageState extends State<LoaderPage> {
                               ),
                             ],
                           ),
-                          child: Image.network(
-                              "https://cdn.pixabay.com/photo/2016/01/08/20/02/michelle-obama-1129160_1280.jpg"),
+                          child: FittedBox(
+                            alignment: Alignment.center,
+                            fit: BoxFit.contain,
+                            child: Image.network(
+                                "https://cdn.pixabay.com/photo/2016/01/08/20/02/michelle-obama-1129160_1280.jpg"),
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -110,7 +116,6 @@ class _LoaderPageState extends State<LoaderPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           height: 150,
-                          // width: 300,
 
                           decoration: BoxDecoration(
                             color: Colors.white,
