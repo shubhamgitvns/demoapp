@@ -1,3 +1,4 @@
+import 'package:demoapp/UserHomePage.dart';
 import 'package:demoapp/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -5,6 +6,17 @@ import 'dart:convert' as convert;
 
 class Utilities {
   static const String mainsitename = "directsell.biz";
+
+  static Widget getPageFromString(String PageName) {
+    switch (PageName) {
+      case "LoaderPage":
+        return LoaderPage(title: "Loader");
+      case "SecondPage":
+        return SecondPage();
+      default:
+        return SecondPage();
+    }
+  }
 
   static Color getColorFromString(String theamcolor) {
     switch (theamcolor) {
@@ -34,6 +46,9 @@ class Utilities {
       print("Body ${response.body}");
       // convert string data in json.
       final jsonResponse = convert.jsonDecode(response.body);
+
+      String homepage = jsonResponse["homepage"];
+      AppPage.homepage = getPageFromString(homepage);
 
       String bgcolor = jsonResponse["bgcolor"];
       //calling getColorFromString function()

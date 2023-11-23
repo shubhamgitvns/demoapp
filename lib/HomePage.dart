@@ -1,3 +1,4 @@
+import 'package:demoapp/apptheme.dart';
 import 'package:flutter/material.dart';
 
 import 'UserHomePage.dart';
@@ -14,7 +15,7 @@ class StartPage extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoaderPage(title: 'Flutter Demo Home Page'),
+      home: AppPage.homepage,
     );
   }
 }
