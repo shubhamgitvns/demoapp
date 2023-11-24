@@ -379,61 +379,68 @@ class _SecondPageState extends State<SecondPage> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 10,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 50,
-                          child: ClipOval(
-                              child: Image.network(
-                            "https://cdn.pixabay.com/photo/2016/01/07/04/52/designer-1125324_1280.jpg",
-                            width: 100,
-                            fit: BoxFit.cover,
-                          )),
-
-                        ),
-                      ],
+            // SizedBox(
+            //   height: 10,
+            // ),
+            Container(
+              color: Colors.amber.shade200,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              radius: 50,
+                              child: ClipOval(
+                                  child: Image.network(
+                                "https://cdn.pixabay.com/photo/2016/01/07/04/52/designer-1125324_1280.jpg",
+                                width: 100,
+                                fit: BoxFit.fill,
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: Column(
-                      children: [
-                        // Text("2"),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Card(
-                                child: Text(
-                              "Asutosh Sharma",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Card(
-                                child: Text("(Advocate)",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                    color: Colors.teal)))
-                          ],
-                        )
-                      ],
+                  Expanded(
+                    child: Container(
+                      child: Column(
+                        children: [
+                          // Text("2"),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Card(
+                                  child: Text(
+                                "Asutosh Sharma",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              )),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Card(
+                                  child: Text("(Advocate)",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.teal)))
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
 
             //Message
@@ -443,7 +450,7 @@ class _SecondPageState extends State<SecondPage> {
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: Colors.black),
                     boxShadow: const [
@@ -464,21 +471,30 @@ class _SecondPageState extends State<SecondPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Card(
-                        child: Text("Latest News",
-                        style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.red),),
+                      const Card(
+                        child: Text(
+                          "Latest News",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red),
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           SizedBox(
-                              width: 300,
-                      child: Card(
-                        child: Text("nhsby hdsbc cdsuc wc dubcd cdjcs xsaxksajhsgcs ddskjcgdsh dsc sd dsjcgvs cdsjcasv "
-                            "njbsbx m jdc d ejdend edewde jdijccbhdch jcndcdjicjd aibgchgd djdcjbducgdb ddbcdichd dbcdhucdb bugcdo ",
-                          style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
-                            ),
-                      ))],
+                              width: 250,
+                              child: Card(
+                                child: Text(
+                                  "nhsby hdsbc cdsuc wc dubcd cdjcs xsaxksajhsgcs ddskjcgdsh dsc sd dsjcgvs cdsjcasv "
+                                  "njbsbx m jdc d ejdend edewde jdijccbhdch jcndcdjicjd aibgchgd djdcjbducgdb ddbcdichd dbcdhucdb bugcdo ",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ))
+                        ],
                       ),
                     ],
                   ),
@@ -488,19 +504,17 @@ class _SecondPageState extends State<SecondPage> {
             //Whatsapp
             Expanded(
               child: Container(
-
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
-
                         child: Column(
                           children: const [
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.white,
-                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
-
+                              backgroundImage: NetworkImage(
+                                  "https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
                             )
                           ],
                         ),
@@ -520,19 +534,17 @@ class _SecondPageState extends State<SecondPage> {
             //facebook
             Expanded(
               child: Container(
-
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
-
                         child: Column(
                           children: const [
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.white,
-                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
-
+                              backgroundImage: NetworkImage(
+                                  "https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
                             )
                           ],
                         ),
@@ -552,19 +564,17 @@ class _SecondPageState extends State<SecondPage> {
             //Twitter
             Expanded(
               child: Container(
-
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
-
                         child: Column(
                           children: const [
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.white,
-                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
-
+                              backgroundImage: NetworkImage(
+                                  "https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
                             )
                           ],
                         ),
@@ -599,7 +609,6 @@ class _SecondPageState extends State<SecondPage> {
                           ),
                         ),
                         child: Text("Let's -> go")),
-
                   ],
                 ),
               ),
