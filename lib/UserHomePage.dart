@@ -356,6 +356,7 @@ class _LoaderPageState extends State<LoaderPage> {
     );
   }
 }
+//Page structure here............
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
@@ -379,67 +380,49 @@ class _SecondPageState extends State<SecondPage> {
       body: SafeArea(
         child: Column(
           children: [
-            // SizedBox(
-            //   height: 10,
-            // ),
-            Container(
-              color: Colors.amber.shade200,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      child: Column(
+            Expanded(
+              flex: 3,
+              child: Container(
+
+                decoration: BoxDecoration(
+                    color: Colors.yellow.shade300,
+                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(75),bottomLeft: Radius.circular(75))
+                ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                           CircleAvatar(
+                             radius: 50,
+                           )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              radius: 50,
-                              child: ClipOval(
-                                  child: Image.network(
-                                "https://cdn.pixabay.com/photo/2016/01/07/04/52/designer-1125324_1280.jpg",
-                                width: 100,
-                                fit: BoxFit.fill,
-                              )),
-                            ),
-                          ),
+                          Text("Name",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)
                         ],
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      child: Column(
+                    SizedBox(height: 10,),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Text("2"),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Card(
-                                  child: Text(
-                                "Asutosh Sharma",
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              )),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Card(
-                                  child: Text("(Advocate)",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.teal)))
-                            ],
-                          )
+                          Text("Titel",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+
+                ),
               ),
             ),
 
@@ -598,41 +581,44 @@ class _SecondPageState extends State<SecondPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blueAccent,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 32, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
+                    Container(
+                      height:50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(10),
+                        //border: Border.all(color: Colors.white),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 10,
+                            spreadRadius: 1.0,
                           ),
-                        ),
-                        child: Text("Let's -> go")),
+                          BoxShadow(
+                            color: Colors.transparent,
+                            offset: Offset(-2.0, -2.0),
+                            blurRadius: 10,
+                            spreadRadius: 1.0,
+                          ),
+                        ],
+
+                      ),
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.red,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Text("Let's -> go")),
+                    ),
                   ],
                 ),
               ),
             ),
-            Expanded(
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blueAccent,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 32, vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        child: Text("Not Now")),
-                  ],
-                ),
-              ),
-            ),
+
           ],
         ),
       ),
