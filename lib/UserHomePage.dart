@@ -377,57 +377,255 @@ class _SecondPageState extends State<SecondPage> {
         centerTitle: true,
       ),
       body: SafeArea(
-          child:  Column(
-            children: [
-              Container(
-                color: Colors.yellow,
+        child: Column(
+          children: [
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          child: ClipOval(
+                              child: Image.network(
+                            "https://cdn.pixabay.com/photo/2016/01/07/04/52/designer-1125324_1280.jpg",
+                            width: 100,
+                            fit: BoxFit.cover,
+                          )),
+
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        // Text("2"),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Card(
+                                child: Text(
+                              "Asutosh Sharma",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            )),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Card(
+                                child: Text("(Advocate)",
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                    color: Colors.teal)))
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            //Message
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.black),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2.0, 2.0),
+                        blurRadius: 10,
+                        spreadRadius: 1.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.transparent,
+                        offset: Offset(-2.0, -2.0),
+                        blurRadius: 10,
+                        spreadRadius: 1.0,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Card(
+                        child: Text("Latest News",
+                        style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.red),),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          SizedBox(
+                              width: 300,
+                      child: Card(
+                        child: Text("nhsby hdsbc cdsuc wc dubcd cdjcs xsaxksajhsgcs ddskjcgdsh dsc sd dsjcgvs cdsjcasv "
+                            "njbsbx m jdc d ejdend edewde jdijccbhdch jcndcdjicjd aibgchgd djdcjbducgdb ddbcdichd dbcdhucdb bugcdo ",
+                          style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
+                            ),
+                      ))],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            //Whatsapp
+            Expanded(
+              child: Container(
+
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
-                      flex:1,
                       child: Container(
-                        color: Colors.red,
+
                         child: Column(
-                          children: [
-                            Text("1")
+                          children: const [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.white,
+                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
+
+                            )
                           ],
                         ),
                       ),
                     ),
                     Expanded(
                       child: Container(
-                        color: Colors.green,
                         child: Column(
-                          children: [
-
-                            Text("2"),
-                            Text("3")
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        color: Colors.blueAccent,
-                        child: Column(
-                          children: [
-                            Text("4"),
-                            Text("5"),
-                            Text("6")
-
-
-                          ],
+                          children: [Text("Whatsapp")],
                         ),
                       ),
                     )
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            //facebook
+            Expanded(
+              child: Container(
 
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+
+                        child: Column(
+                          children: const [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.white,
+                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
+
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        child: Column(
+                          children: [Text("Whatsapp")],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            //Twitter
+            Expanded(
+              child: Container(
+
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+
+                        child: Column(
+                          children: const [
+                            CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.white,
+                              backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/05/22/11/38/whatsapp-6273368_1280.png"),
+
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        child: Column(
+                          children: [Text("Whatsapp")],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            //Button
+            Expanded(
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blueAccent,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 32, vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        child: Text("Let's -> go")),
+
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blueAccent,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 32, vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        child: Text("Not Now")),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
