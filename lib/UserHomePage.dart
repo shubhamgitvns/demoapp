@@ -369,6 +369,47 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //************Drawer code start*********************//
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+             DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.yellow.shade300,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Business'),
+              onTap: () {
+
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('School'),
+              onTap: () {
+               
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      //************Drawer code end*********************//
+
       appBar: AppBar(
         backgroundColor: AppTheme.appbarbgcolor,
         title: Text(
@@ -383,45 +424,60 @@ class _SecondPageState extends State<SecondPage> {
             Expanded(
               flex: 3,
               child: Container(
-
                 decoration: BoxDecoration(
                     color: Colors.yellow.shade300,
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(75),bottomLeft: Radius.circular(75))
-                ),
+                    borderRadius: const BorderRadius.only(
+                        bottomRight: Radius.circular(75),
+                        bottomLeft: Radius.circular(75))),
                 child: Column(
                   children: [
                     Expanded(
                       child: Container(
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                           CircleAvatar(
-                             radius: 50,
-                           )
+                            CircleAvatar(
+                              radius: 50,
+                            )
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Container(
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Name",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)
+                          Text(
+                            "Name",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          )
                         ],
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Titel",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)
+                          Text(
+                            "Titel",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white),
+                          )
                         ],
                       ),
                     ),
                   ],
-
                 ),
               ),
             ),
@@ -451,10 +507,10 @@ class _SecondPageState extends State<SecondPage> {
                       ),
                     ],
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Card(
+                      Card(
                         child: Text(
                           "Latest News",
                           style: TextStyle(
@@ -465,7 +521,7 @@ class _SecondPageState extends State<SecondPage> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           SizedBox(
                               width: 250,
                               child: Card(
@@ -491,8 +547,8 @@ class _SecondPageState extends State<SecondPage> {
                   children: [
                     Expanded(
                       child: Container(
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.white,
@@ -522,7 +578,7 @@ class _SecondPageState extends State<SecondPage> {
                     Expanded(
                       child: Container(
                         child: Column(
-                          children: const [
+                          children:  [
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.white,
@@ -582,7 +638,7 @@ class _SecondPageState extends State<SecondPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height:50,
+                      height: 50,
                       width: 150,
                       decoration: BoxDecoration(
                         color: Colors.red,
@@ -602,7 +658,6 @@ class _SecondPageState extends State<SecondPage> {
                             spreadRadius: 1.0,
                           ),
                         ],
-
                       ),
                       child: ElevatedButton(
                           onPressed: () {},
@@ -618,7 +673,6 @@ class _SecondPageState extends State<SecondPage> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
